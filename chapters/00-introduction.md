@@ -272,6 +272,7 @@ Vector3 localPosition = transform.localPosition;
 Không nên xuất hai giá trị này mà không ghi rõ loại nào đang được dùng.
 ![](../assets/introduction/12_code_scene_mapping.svg)
 *Hình nối code với Scene: **`position`** đo từ gốc toàn cảnh, còn **`localPosition`** đo từ gốc của đối tượng cha.*
+
 <table fit-page-width="true" header-row="true">
 <tr>
 <td></td>
@@ -294,6 +295,7 @@ Không nên xuất hai giá trị này mà không ghi rõ loại nào đang đư
 <td>Cần biết vị trí tương đối trong cấu trúc cha-con</td>
 </tr>
 </table>
+
 ### Một lỗi rất nguy hiểm
 Giả sử frame 1 ta xuất `localPosition`, nhưng frame 2 một đoạn mã khác lại xuất `position`.
 Các tệp vẫn chứa ba số hợp lệ. Chương trình đọc dữ liệu có thể không báo lỗi. Nhưng tập dữ liệu đã bị trộn hai cách đo khác nhau.
@@ -719,4 +721,3 @@ Khi đó câu hỏi chuyển thành:
 [Kiến trúc toàn sách — 26 chương](https://app.notion.com/p/3cab15c2171581e097e3c2737f476679)
 [Chương 1 — Từ bài toán thị giác đến một mẫu dữ liệu có thể kiểm chứng](https://app.notion.com/p/3cab15c2171581548ef2df82d3de9f71)
 [Chương 2 — Cùng một điểm cơ thể trong nhiều hệ tọa độ](https://app.notion.com/p/3cbb15c21715815c9871d774ae088470)
-
