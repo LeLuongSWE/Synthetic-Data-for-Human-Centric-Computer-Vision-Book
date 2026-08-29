@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect width="1200" height="900" rx="26" fill="#eaf4ff"/>
+  <text x="600" y="68" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="700" fill="#12345b">Phép dời vị trí</text>
+  <rect x="175" y="92" width="850" height="58" rx="18" fill="#fff8dc" stroke="#d7b32d" stroke-width="2"/>
+  <text x="600" y="130" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="600" fill="#3f4650">Hình và tư thế giữ nguyên; mọi điểm cùng dịch chuyển một lượng</text>
+
+  <rect x="70" y="190" width="1060" height="520" rx="24" fill="#f8fbff" stroke="#b8d2ed" stroke-width="3"/>
+  <line x1="125" y1="630" x2="1075" y2="630" stroke="#91a8bf" stroke-width="4"/>
+  <line x1="150" y1="610" x2="150" y2="260" stroke="#c7d6e5" stroke-width="3"/>
+  <text x="1060" y="665" font-family="Inter,Arial,sans-serif" font-size="22" fill="#64748b">x</text>
+  <text x="125" y="250" font-family="Inter,Arial,sans-serif" font-size="22" fill="#64748b">y</text>
+
+  <g fill="none" stroke="#7fa6d1" stroke-width="8" stroke-linecap="round" stroke-dasharray="13 10">
+    <circle cx="300" cy="305" r="42"/>
+    <line x1="300" y1="347" x2="300" y2="465"/>
+    <line x1="300" y1="375" x2="235" y2="430"/>
+    <line x1="300" y1="375" x2="365" y2="430"/>
+    <line x1="300" y1="465" x2="250" y2="575"/>
+    <line x1="300" y1="465" x2="350" y2="575"/>
+  </g>
+  <g fill="none" stroke="#1769d2" stroke-width="9" stroke-linecap="round">
+    <circle cx="800" cy="305" r="42" fill="#cfe4ff"/>
+    <line x1="800" y1="347" x2="800" y2="465"/>
+    <line x1="800" y1="375" x2="735" y2="430"/>
+    <line x1="800" y1="375" x2="865" y2="430"/>
+    <line x1="800" y1="465" x2="750" y2="575"/>
+    <line x1="800" y1="465" x2="850" y2="575"/>
+  </g>
+  <line x1="405" y1="425" x2="675" y2="425" stroke="#2563eb" stroke-width="10" marker-end="url(#arrow)"/>
+  <text x="540" y="365" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#1d4ed8">t = (Δx, Δy, Δz)</text>
+  <rect x="195" y="650" width="210" height="42" rx="14" fill="#dbeafe"/>
+  <text x="300" y="679" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="650" fill="#31587f">Trước: P</text>
+  <rect x="665" y="650" width="270" height="42" rx="14" fill="#dbeafe"/>
+  <text x="800" y="679" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="650" fill="#174f96">Sau: P′ = P + t</text>
+
+  <rect x="150" y="760" width="900" height="72" rx="20" fill="#d9ebff" stroke="#7eb7f2" stroke-width="2"/>
+  <text x="600" y="805" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="600" fill="#173b66">Không đổi: hình dạng • kích thước • tư thế</text>
+</svg>

@@ -1,0 +1,22 @@
+version: 1
+sync:
+  direction: git-to-notion
+  source_branch: main
+  overwrite_from_notion: false
+workspace:
+  id: 448dab17-a589-491f-a683-ba8aaf617fd1
+  name: "Đức Lương Lê's Notion"
+pages:
+  - source: chapters/00-introduction.md
+    notion_page_id: 3cab15c2-1715-81dc-b86e-f1ade126cb7e
+    notion_url: https://app.notion.com/p/3cab15c2171581dcb86ef1ade126cb7e
+  - source: docs/book-architecture.md
+    notion_page_id: 3cab15c2-1715-81e0-97e3-c2737f476679
+    notion_url: https://app.notion.com/p/3cab15c2171581e097e3c2737f476679
+  - source: chapters/01-verifiable-data-sample.md
+    notion_page_id: 3cab15c2-1715-8154-8ef2-df82d3de9f71
+    notion_url: https://app.notion.com/p/3cab15c2171581548ef2df82d3de9f71
+  - source: chapters/02-coordinate-frames.md
+    notion_page_id: 3cbb15c2-1715-815c-9871-d774ae088470
+    notion_url: https://app.notion.com/p/3cbb15c21715815c9871d774ae088470
+

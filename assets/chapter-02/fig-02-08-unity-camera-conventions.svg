@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="648pt" viewBox="0 0 1152 648" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-29T00:52:59.738688</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 648 
+L 1152 648 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #f7f8fc"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 130.432244 404.809008 
+L 230.355256 404.809008 
+Q 237.01679 404.809008 237.01679 399.707461 
+L 237.01679 353.793539 
+Q 237.01679 348.691992 230.355256 348.691992 
+L 130.432244 348.691992 
+Q 123.77071 348.691992 123.77071 353.793539 
+L 123.77071 399.707461 
+Q 123.77071 404.809008 130.432244 404.809008 
+z
+" clip-path="url(#p5b3e4ad039)" style="fill: #ffffff; stroke: #172033; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 456.847415 376.7505 
+L 440.19358 381.341892 
+L 440.19358 376.776008 
+L 230.355256 376.776008 
+L 230.355256 376.724992 
+L 440.19358 376.724992 
+L 440.19358 372.159108 
+z
+" clip-path="url(#p5b3e4ad039)" style="fill: #2f6fed; stroke: #2f6fed; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 480.162784 391.034831 
+C 485.109431 391.034831 489.854141 389.529744 493.351949 386.851047 
+C 496.849756 384.172351 498.81508 380.538749 498.81508 376.7505 
+C 498.81508 372.962251 496.849756 369.328649 493.351949 366.649953 
+C 489.854141 363.971256 485.109431 362.466169 480.162784 362.466169 
+C 475.216138 362.466169 470.471427 363.971256 466.973619 366.649953 
+C 463.475812 369.328649 461.510489 372.962251 461.510489 376.7505 
+C 461.510489 380.538749 463.475812 384.172351 466.973619 386.851047 
+C 470.471427 389.529744 475.216138 391.034831 480.162784 391.034831 
+z
+" clip-path="url(#p5b3e4ad039)" style="fill: #e8872e; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="180.39375" y="380.889563" transform="rotate(-0 180.39375 380.889563)">camera</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 16px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2f6fed" x="340.270568" y="362.466169" transform="rotate(-0 340.270568 362.466169)">+Z — phía trước</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e9d67" transform="translate(406.646378 393.113836)">người trước camera</text>
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e9d67" transform="translate(460.402628 409.910555)">z &gt; 0</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #5c667a" x="313.624432" y="478.781438" transform="rotate(-0 313.624432 478.781438)">Dùng Transform.InverseTransformPoint</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2e9d67" x="300.301364" y="125.87625" transform="rotate(-0 300.301364 125.87625)">Camera Transform local</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 1001.583153 404.809008 
+L 1101.506165 404.809008 
+Q 1108.167699 404.809008 1108.167699 399.707461 
+L 1108.167699 353.793539 
+Q 1108.167699 348.691992 1101.506165 348.691992 
+L 1001.583153 348.691992 
+Q 994.921619 348.691992 994.921619 353.793539 
+L 994.921619 399.707461 
+Q 994.921619 404.809008 1001.583153 404.809008 
+z
+" clip-path="url(#p3807d0a54b)" style="fill: #ffffff; stroke: #172033; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 775.090994 376.7505 
+L 791.74483 372.159108 
+L 791.74483 376.724992 
+L 1001.583153 376.724992 
+L 1001.583153 376.776008 
+L 791.74483 376.776008 
+L 791.74483 381.341892 
+z
+" clip-path="url(#p3807d0a54b)" style="fill: #2f6fed; stroke: #2f6fed; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 751.775625 391.034831 
+C 756.722272 391.034831 761.466982 389.529744 764.96479 386.851047 
+C 768.462597 384.172351 770.42792 380.538749 770.42792 376.7505 
+C 770.42792 372.962251 768.462597 369.328649 764.96479 366.649953 
+C 761.466982 363.971256 756.722272 362.466169 751.775625 362.466169 
+C 746.828978 362.466169 742.084268 363.971256 738.58646 366.649953 
+C 735.088653 369.328649 733.12333 372.962251 733.12333 376.7505 
+C 733.12333 380.538749 735.088653 384.172351 738.58646 386.851047 
+C 742.084268 389.529744 746.828978 391.034831 751.775625 391.034831 
+z
+" clip-path="url(#p3807d0a54b)" style="fill: #e8872e; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="1051.544659" y="380.889563" transform="rotate(-0 1051.544659 380.889563)">camera</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 16px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2f6fed" x="888.337074" y="362.466169" transform="rotate(-0 888.337074 362.466169)">−Z — phía trước</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #7a4ce0" transform="translate(678.259219 393.113836)">người trước camera</text>
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #7a4ce0" transform="translate(732.015469 409.910555)">z &lt; 0</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #5c667a" x="911.652443" y="478.781438" transform="rotate(-0 911.652443 478.781438)">Dùng Camera.worldToCameraMatrix</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #7a4ce0" x="851.698636" y="125.87625" transform="rotate(-0 851.698636 125.87625)">Không gian view của worldToCameraMatrix</text>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #172033" x="576" y="43.185313" transform="rotate(-0 576 43.185313)">Trong Unity, “hệ camera” có hai cách biểu diễn dễ bị gọi lẫn</text>
+  </g>
+  <g id="text_12">
+   <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #d94b4b" x="576" y="570.24" transform="rotate(-0 576 570.24)">Cả hai quy ước đều hợp lệ. Lỗi xuất hiện khi code tạo nhãn dùng một quy ước nhưng metadata ghi quy ước còn lại.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5b3e4ad039">
+   <rect x="33.84" y="131.87625" width="532.922727" height="408.12375"/>
+  </clipPath>
+  <clipPath id="p3807d0a54b">
+   <rect x="585.237273" y="131.87625" width="532.922727" height="408.12375"/>
+  </clipPath>
+ </defs>
+</svg>
