@@ -683,6 +683,7 @@ Sau khoảng 100 frame:
 ---
 # 17. Bài kiểm tra đầu ra của Phần giới thiệu
 Chưa cần sang phần camera nếu chưa trả lời chắc được các câu sau mà không tra tài liệu.
+
 - [ ] Tại sao `(1,2,3)` một mình chưa đủ để mô tả một vị trí?
 - [ ] Điểm và vector khác nhau ở đâu?
 - [ ] Hệ tọa độ là gì?
@@ -697,6 +698,7 @@ Chưa cần sang phần camera nếu chưa trả lời chắc được các câu
 - [ ] Tọa độ đồng nhất thêm giá trị thứ tư để giải quyết vấn đề gì?
 - [ ] Unity quy ước chiều dương của `x`, `y`, `z` như thế nào?
 - [ ] Vì sao dữ liệu từ Unity có thể cần đổi hệ tọa độ trước khi dùng trong công cụ khác?
+
 ### Điều kiện đạt
 Phần giới thiệu được coi là hoàn thành khi bạn có thể:
 1. giải thích các câu trên bằng lời của mình;
