@@ -45,9 +45,11 @@ python scripts/prepare_docs.py
 mkdocs serve
 ```
 
-Checklist trong từng chương có thể tích trực tiếp trên website. Tiến độ được lưu
-trong trình duyệt hiện tại, không ghi ngược vào Git và không tự đồng bộ sang thiết
-bị khác; dùng Notion nếu cần theo dõi tiến độ tổng thể giữa nhiều thiết bị.
+Checklist trong từng chương có thể tích trực tiếp và có ô ghi câu trả lời hoặc
+bằng chứng. Tiến độ cùng câu trả lời được lưu trong trình duyệt hiện tại, không
+ghi ngược vào Git và không tự đồng bộ sang thiết bị khác. Nút **Xuất bài làm
+(.md)** tạo tệp có thể đính kèm vào một chat riêng để được kiểm tra; dùng Notion
+nếu cần theo dõi tiến độ tổng thể giữa nhiều thiết bị.
 
 Mỗi pull request được kiểm tra bằng `mkdocs build --strict`. Mỗi thay đổi được merge vào `main` sẽ kích hoạt workflow xuất bản.
 
