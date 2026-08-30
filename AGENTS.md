@@ -1,7 +1,7 @@
 # Repository instructions
 
-- Git is the source of truth. Treat Notion as a publishing and review target.
-- Do not import edits from Notion over Git without an explicit conflict review.
+- Git is the source of truth. Treat the MkDocs/GitHub Pages site as the reading edition.
+- Use Notion only for learning progress, questions, recall notes, and links back to the published book. Do not maintain a second editable copy of chapter content there.
 - Read `docs/writing-guide.md`, `docs/book-architecture.md`, and the relevant section of `docs/source-map.md` before writing a chapter.
 - Explain every technical term before relying on it later.
 - Keep claims traceable to primary sources where possible.
@@ -9,4 +9,4 @@
 - Store figures under `assets/<chapter>/` and use relative paths.
 - Do not commit reference PDFs or generated environments.
 - For substantial changes, use a focused branch and keep commits scoped.
-
+- Before publishing documentation changes, run `python scripts/prepare_docs.py` and `mkdocs build --strict`.

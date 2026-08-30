@@ -1,16 +1,18 @@
-# Quy trình version control và xuất bản Notion
+# Quy trình version control và xuất bản website
 
-## Nguồn chuẩn
+## Vai trò của từng nơi
 
-Repository Git là nguồn chuẩn duy nhất. Notion là bản trình bày để đọc, nhận xét và duyệt.
+Repository Git là nguồn nội dung chuẩn duy nhất. Website MkDocs là bản đọc được tạo tự động. Notion chỉ lưu tiến độ, câu hỏi, bản tóm tắt bằng trí nhớ và liên kết về website.
 
-Chiều đồng bộ được phép:
+Luồng nội dung:
 
 ```text
-branch Git -> pull request/diff -> main -> Notion
+branch Git -> pull request/diff -> main -> MkDocs -> GitHub Pages
+                                              |
+                                              -> liên kết trong Notion
 ```
 
-Không tự động đồng bộ ngược từ Notion về Git vì chuyển đổi block/Markdown và thay đổi đồng thời có thể gây mất nội dung hoặc ghi đè.
+Không duy trì một bản chương có thể chỉnh sửa độc lập trong Notion. Ghi chú học tập không tự động đồng bộ ngược vào Git vì chúng không phải nội dung chuẩn và có thể ghi đè thay đổi đã duyệt.
 
 ## Một thay đổi thông thường
 
@@ -26,7 +28,7 @@ git commit -m "Revise Chapter 2 coordinate-frame explanation"
 git push -u origin chapter-02/revise-coordinate-frames
 ```
 
-Sau khi xem diff và duyệt, merge branch vào `main`. Bản Notion chỉ được cập nhật từ commit đã merge.
+Sau khi xem diff và duyệt, merge branch vào `main`. Workflow GitHub Actions sẽ build và xuất bản đúng trạng thái đã merge.
 
 ## Quy ước branch
 
@@ -52,15 +54,33 @@ Commit message dùng động từ ngắn và nói rõ phạm vi, ví dụ:
 - Đối chiếu yêu cầu tương ứng trong `docs/source-map.md`.
 - Xem diff để tránh thay đổi ngoài phạm vi.
 
-## Xuất sang Notion
+## Kiểm tra và xuất bản website
 
-Tệp đích được khai báo trong `docs/notion-pages.yml`. Khi xuất bản:
+Chạy cục bộ trước khi đẩy branch:
 
-1. đọc tệp Markdown ở commit `main`;
-2. cập nhật đúng trang Notion đã ánh xạ;
-3. tải ảnh cục bộ lên Notion thay vì dùng URL tạm thời;
-4. kiểm tra tiêu đề, code block, bảng, công thức và ảnh;
-5. ghi commit SHA đã xuất vào phần metadata/trạng thái xuất bản.
+```bash
+python -m pip install -r requirements-docs.txt
+python scripts/prepare_docs.py
+mkdocs build --strict
+```
 
-Kết nối GitHub của Notion không thực hiện luồng này; nó chỉ đưa issue và pull request vào Notion. Việc xuất nội dung phải do một script/API hoặc tác nhân đã được cấp quyền cho cả GitHub và Notion thực hiện.
+Workflow `.github/workflows/publish-book.yml` thực hiện lại phép kiểm tra trên pull request. Khi thay đổi được merge vào `main`, workflow sẽ:
 
+1. tạo cây nguồn MkDocs tạm thời từ `index.md`, `chapters/`, `assets/`, lộ trình sách và trạng thái mã thực hành;
+2. build ở chế độ `--strict` để chặn liên kết hoặc cấu hình bị lỗi;
+3. tải artifact tĩnh lên GitHub Pages;
+4. triển khai bản đọc gắn với commit đã merge.
+
+GitHub Pages phải được bật một lần tại **Settings → Pages → Build and deployment → Source → GitHub Actions**. Với repository cá nhân, Pages thường công khai dù repository nguồn là private; không bật trước khi nội dung được phép công khai.
+
+## Theo dõi học trong Notion
+
+Mỗi chương chỉ cần một mục theo dõi gồm:
+
+- liên kết tới chương trên website;
+- trạng thái `Chưa học`, `Đang học`, `Cần ôn` hoặc `Đã đạt cổng`;
+- câu hỏi chưa giải quyết;
+- bản tóm tắt viết lại bằng trí nhớ;
+- ngày ôn tiếp theo nếu cần.
+
+`docs/notion-pages.yml` chỉ giữ ánh xạ lịch sử tới các trang đã tồn tại. Trường `sync.enabled` phải giữ là `false` trừ khi người dùng quyết định khôi phục việc xuất bản một chiều sau một lần xem xét xung đột rõ ràng.

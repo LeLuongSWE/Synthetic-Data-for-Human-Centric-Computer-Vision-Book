@@ -253,7 +253,7 @@ Phần bên phải có thể vượt qua ba kiểm tra yếu: tệp mở đượ
 
 ## 1.6 Mini-lab: tạo và bắt lỗi một mẫu dữ liệu
 
-Mini-lab dùng một người được vẽ bằng các đoạn thẳng và đa giác. Cách vẽ này cố ý không che giấu hình học, nên ta biết chính xác silhouette và điểm khớp phải nằm ở đâu. Toàn bộ chương trình nằm trong [`code/chapter_01_demo.py`](code/chapter_01_demo.py).
+Mini-lab dùng một người được vẽ bằng các đoạn thẳng và đa giác. Cách vẽ này cố ý không che giấu hình học, nên ta biết chính xác silhouette và điểm khớp phải nằm ở đâu. Tệp đầy đủ `code/chapter_01_demo.py` đã được dùng để tạo chương nhưng attachment gốc chưa được nhập vào repository; xem [trạng thái di chuyển mã thực hành](../code/README.md). Các đoạn mã cốt lõi vẫn được trình bày ngay bên dưới.
 
 ### 1.6.1 Môi trường đã kiểm thử
 
@@ -538,4 +538,3 @@ Chương tiếp theo sẽ bắt đầu từ chính câu hỏi đó, dùng một 
 3. Priyanka Patel et al., [*AGORA: Avatars in Geography Optimized for Regression Analysis*](https://arxiv.org/abs/2104.14643), CVPR 2021. Nguồn cho ví dụ dữ liệu tổng hợp nhiều người với tham chiếu 3D chi tiết trong các cảnh phức tạp.
 4. Josh Tobin et al., [*Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World*](https://arxiv.org/abs/1703.06907), IROS 2017. Nguồn cho ví dụ thay đổi có chủ đích các yếu tố mô phỏng và đo khả năng chuyển sang dữ liệu thật trong một bài toán robot cụ thể.
 5. Aston Zhang, Zachary C. Lipton, Mu Li, Alexander J. Smola, *Dive into Deep Learning*, bản PyTorch, 2022. Nguồn tham khảo phương pháp tổ chức học bằng ví dụ chạy được; nội dung kỹ thuật của chương không được suy ra từ sách này.
-

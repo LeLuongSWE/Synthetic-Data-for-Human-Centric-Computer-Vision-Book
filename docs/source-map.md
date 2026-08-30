@@ -1,9 +1,9 @@
 ---
 document_title: "Source Map — Synthetic Data for Human-Centric Computer Vision"
-version: "1.0"
+version: "1.1"
 status: "Nguồn chuẩn đang hoạt động"
-updated: "2026-08-29 (UTC+7)"
-architecture_version: "1.0"
+updated: "2026-08-30 (UTC+7)"
+architecture_version: "1.1"
 chapter_count: 26
 part_count: 8
 appendix_count: 5
@@ -85,17 +85,17 @@ Mỗi khẳng định trong bản thảo phải thuộc ít nhất một loại 
 
 | ID | Tệp | Trạng thái | Vai trò được phép | Không được dùng để | Phạm vi chương | Dấu vân tay |
 | --- | --- | --- | --- | --- | --- | --- |
-| `INT-001` | `book-architecture-v1(1).md` | `ACTIVE` | Nguồn chuẩn về 26 chương, 8 phần, 5 phụ lục, dự án dậm chân xuyên suốt và các quyết định không được tự ý đổi | Chứng minh toán, API hay hiệu quả synthetic-to-real | Toàn sách | SHA-256 `31f899f16ce08196ee011e2e87a76ec71d2dcbbc84ef8da2dda765c815d10e71` |
-| `INT-002` | `synthetic-data-writing-guide.md` | `ACTIVE` | Nguồn chuẩn về cấu trúc chương, thuật ngữ, công thức, code, hình, thí nghiệm, Markdown và quy trình duyệt | Thay thế nguồn kỹ thuật chuyên ngành | Toàn sách | SHA-256 `a81986a8873a8326bf8fd04da18dd3615bdf1903d47b45993c29ddf820ab5ce9` |
+| `INT-001` | `docs/book-architecture.md` | `ACTIVE` | Nguồn chuẩn về 26 chương, 8 phần, 5 phụ lục, dự án dậm chân xuyên suốt và các quyết định không được tự ý đổi | Chứng minh toán, API hay hiệu quả synthetic-to-real | Toàn sách | SHA-256 `3b51e2bcf5aa5f6669d3d7c158ab811632fd725d936d373865d98eb6bd770c09` |
+| `INT-002` | `docs/writing-guide.md` | `ACTIVE` | Nguồn chuẩn về cấu trúc chương, thuật ngữ, công thức, code, hình, thí nghiệm, Markdown và quy trình duyệt | Thay thế nguồn kỹ thuật chuyên ngành | Toàn sách | SHA-256 `74fc9c4875bb2fe96e0bde7f2115c8b6db36edbd50c92e554770d9c17215df44` |
+| `INT-003` | `chapters/00-introduction.md` | `ACTIVE` | Phần giới thiệu đã duyệt và cách định vị cuốn sách | Chứng minh các khẳng định kỹ thuật ngoài nguồn được trích dẫn trong phần | Giới thiệu; đầu vào cho Ch. 1–3 | SHA-256 `bad09d20712ce3db1a5386cc6f920ddd204e94a8839090fc4aca42aec056e9a1` |
+| `INT-004` | `chapters/01-verifiable-data-sample.md` | `ACTIVE` | Mẫu tối thiểu gồm ảnh, binary mask, keypoint, metadata và validator nhãn lệch | Khẳng định tệp mã attachment đã có trong repository hoặc hiệu quả synthetic-to-real | Ch. 1–2 | SHA-256 `96ae77262bb0807ac75023da66be1d399dfb4882d70bc9f57d2f20017143099a` |
+| `INT-005` | `chapters/02-coordinate-frames.md` | `ACTIVE` | Bản Chương 2 chuẩn hiện tại, quy ước điểm/hệ/đơn vị và các test đã mô tả | Khẳng định các attachment Python/C# đã được nhập vào repository | Ch. 2–3 | SHA-256 `6f601713f4d0bed20651290b69bee0f5965b6ddea9cfbe71eb899183f7091759` |
 | `PED-001` | `d2l-en-pytorch.pdf` — Release 0.17.4, 2022 | `ACTIVE` | Tham khảo learning by doing, nhịp giải thích–code–output, triển khai từ đầu rồi dùng API | Làm nguồn chính cho synthetic data, Unity, human model, 3D geometry hoặc API hiện hành | Phương pháp biên soạn; hỗ trợ Ch. 23–25 ở mức nhập môn ML | SHA-256 `cb1af1169a2e4750812feed9058e868a32e6af921b626869815482e661b79ed1` |
 
 ### 5.2 Nguồn nội bộ phải bổ sung
 
 | ID | Tệp đề nghị | Trạng thái | Nội dung bắt buộc | Chặn công việc nào nếu thiếu |
 | --- | --- | --- | --- | --- |
-| `INT-003` | `03-introduction.md` | `KNOWN-MISSING` | Phần giới thiệu đã duyệt và cách định vị cuốn sách | Kiểm tra tính liên tục giữa lời hứa đầu sách và 26 chương |
-| `INT-004` | `04-chapter-01.md` | `KNOWN-MISSING` | Mẫu tối thiểu gồm ảnh, binary mask, keypoint, metadata và validator nhãn lệch | Sửa hoặc trích dẫn Chương 1; tái sử dụng output sang Chương 2 |
-| `INT-005` | `05-chapter-02.md` | `KNOWN-MISSING` | Bản Chương 2 đã được ghi nhận trong lịch sử dự án; phải xác định bản chuẩn trước khi dùng | Viết Chương 3 dựa trên chính xác lớp `Transform`, quy ước và test của Chương 2 |
 | `INT-006` | `06-glossary-and-conventions.md` | `TO-IMPORT` | Hệ trục, tay trái/phải, vector hàng/cột, chiều phép biến đổi, đơn vị, độ/radian, pixel-center, joint naming | Mọi chương có hình học, camera, skeleton hoặc nhãn |
 | `INT-007` | `07-research-claims.md` | `TO-IMPORT` | Danh sách giả thuyết, claim được phép, claim cấm và bằng chứng cần có | Ch. 19, 23–26 |
 | `INT-008` | `08-experiment-protocol.md` | `TO-IMPORT` | Split, seed, metric, compute/data budget, real-only và held-out real test | Ch. 23–26 |
@@ -342,4 +342,3 @@ Khi thêm hoặc thay một nguồn:
 ---
 
 **Nguồn chuẩn điều khiển tệp này:** `INT-001` và `INT-002`. Nếu source map mâu thuẫn với mục tiêu hoặc kiến trúc đã duyệt, phải sửa source map; không được âm thầm sửa mục tiêu của sách.
-

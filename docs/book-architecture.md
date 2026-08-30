@@ -1,8 +1,8 @@
 ---
 document_title: "Kiến trúc toàn sách — Synthetic Data for Human-Centric Computer Vision"
-version: "1.0"
+version: "1.1"
 status: "Bản kiến trúc để duyệt"
-updated: "2026-08-29 (UTC+7)"
+updated: "2026-08-30 (UTC+7)"
 chapter_count: 26
 part_count: 8
 appendix_count: 5
@@ -349,7 +349,7 @@ Không viết đồng thời nhiều chương chưa được duyệt. Mỗi ph�
 1. chốt mục tiêu phần, bản đồ phụ thuộc, thuật ngữ và storyboard hình;
 2. viết từng chương, chạy code và tạo output thật;
 3. kiểm tra đối kháng về toán, code, hình, kết luận và ca biên;
-4. đưa lên Notion, đọc ngược lại và chỉ mở phần kế tiếp sau khi phần hiện tại được duyệt.
+4. xuất bản lên website, đọc ngược lại, cập nhật tiến độ trong Notion và chỉ mở phần kế tiếp sau khi phần hiện tại được duyệt.
 
 Thứ tự tiếp theo sau khi kiến trúc này được duyệt là **Chương 2 — Cùng một điểm cơ thể trong nhiều hệ tọa độ**.
 
@@ -384,5 +384,4 @@ Thứ tự tiếp theo sau khi kiến trúc này được duyệt là **Chương
 - Dậm chân là ví dụ xuyên suốt bắt buộc; đi đều và đi nghiêm chỉ mở rộng ở capstone.
 - Unity là triển khai thực tế chính nhưng không quyết định thứ tự khái niệm.
 - Real held-out test là điều kiện bắt buộc để kết luận tác dụng của synthetic data.
-- Một thay đổi lớn về số phần, số chương hoặc mục tiêu phải cập nhật cả bản kiến trúc này và mục lục Notion, không được sửa rời rạc trong một chương.
-
+- Một thay đổi lớn về số phần, số chương hoặc mục tiêu phải cập nhật cả bản kiến trúc này và mục lục website, không được sửa rời rạc trong một chương.
