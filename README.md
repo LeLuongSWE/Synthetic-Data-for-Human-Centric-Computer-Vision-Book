@@ -45,6 +45,10 @@ python scripts/prepare_docs.py
 mkdocs serve
 ```
 
+Checklist trong từng chương có thể tích trực tiếp trên website. Tiến độ được lưu
+trong trình duyệt hiện tại, không ghi ngược vào Git và không tự đồng bộ sang thiết
+bị khác; dùng Notion nếu cần theo dõi tiến độ tổng thể giữa nhiều thiết bị.
+
 Mỗi pull request được kiểm tra bằng `mkdocs build --strict`. Mỗi thay đổi được merge vào `main` sẽ kích hoạt workflow xuất bản.
 
 > **Lưu ý quyền truy cập:** GitHub Pages của repository cá nhân thường là website công khai, kể cả khi repository nguồn là private. Chỉ bật Pages sau khi đã quyết định nội dung sách được phép công khai.
