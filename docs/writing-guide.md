@@ -1,11 +1,12 @@
 ---
 document_title: "Đặc tả biên soạn tài liệu Synthetic Data for Human-Centric Computer Vision"
-version: "1.0"
+version: "1.1"
 status: "Quy chuẩn bắt buộc"
-updated: "2026-08-29 (UTC+7)"
+updated: "2026-08-30 (UTC+7)"
 applies_to:
   - "Bản Markdown nguồn"
-  - "Trang Notion xuất bản"
+  - "Website MkDocs xuất bản từ GitHub"
+  - "Trang Notion theo dõi học tập"
   - "Code, đồ thị, sơ đồ và bài thực hành đi kèm"
 reference_style: "Dive into Deep Learning - bản PyTorch, 2022"
 ---
@@ -14,7 +15,7 @@ reference_style: "Dive into Deep Learning - bản PyTorch, 2022"
 
 ## 0. Mục đích và cách dùng tài liệu này
 
-Tệp này là quy chuẩn để viết lại từ đầu và tiếp tục phát triển tài liệu **Synthetic Data for Human-Centric Computer Vision**. Nó quy định cách lựa chọn thứ tự kiến thức, giải thích thuật ngữ, dùng công thức, viết code, thiết kế hình minh họa, kiểm chứng nội dung và xuất bản lên Notion.
+Tệp này là quy chuẩn để viết lại từ đầu và tiếp tục phát triển tài liệu **Synthetic Data for Human-Centric Computer Vision**. Nó quy định cách lựa chọn thứ tự kiến thức, giải thích thuật ngữ, dùng công thức, viết code, thiết kế hình minh họa, kiểm chứng nội dung, xuất bản website và tách ghi chú học tập trong Notion khỏi nội dung chuẩn.
 
 Đây là đặc tả về **cách biên soạn**, không phải dàn ý nội dung bất biến. Trước khi viết một phần lớn, người viết vẫn phải xác định phạm vi, đầu ra học tập và chuỗi phụ thuộc kiến thức của phần đó.
 
@@ -426,7 +427,7 @@ CẤM chèn hình rồi chuyển ngay sang chủ đề khác.
 ### 9.3 Tỉ lệ và kích thước
 
 - CẤM kéo giãn hình theo cả chiều rộng và chiều cao.
-- BẮT BUỘC giữ nguyên tỉ lệ gốc khi đưa lên Notion.
+- BẮT BUỘC giữ nguyên tỉ lệ gốc khi đưa lên bản đọc website.
 - Sơ đồ đường ống ưu tiên tỉ lệ ngang `16:9` hoặc `3:2`.
 - Đồ thị ưu tiên `4:3`; hình không gian có thể dùng `1:1` nếu bố cục thật sự cần.
 - Hình dọc không được phóng toàn chiều rộng trang nếu tạo khoảng trống hoặc tỷ lệ mất cân đối; phải thiết kế lại, cắt hợp lý hoặc đặt cạnh hình liên quan.
@@ -559,7 +560,7 @@ Thông tin mở rộng được đặt sau luồng chính dưới một trong c�
 - Bảng dùng cho so sánh chính xác theo cùng tiêu chí.
 - Không biến toàn bộ chương thành các gạch đầu dòng; luồng giải thích chính vẫn phải là văn xuôi có liên kết.
 
-## 13. Quy chuẩn Markdown và Notion
+## 13. Quy chuẩn Markdown, website và Notion
 
 ### 13.1 Markdown nguồn
 
@@ -570,14 +571,20 @@ Thông tin mở rộng được đặt sau luồng chính dưới một trong c�
 - Mỗi hình có tên tệp ổn định, alt text có nghĩa và chú thích đánh số.
 - Liên kết nội bộ phải dùng tên mục ổn định, tránh “phần trên” hoặc “hình dưới” nếu có thể thay đổi bố cục.
 
-### 13.2 Khi đưa lên Notion
+### 13.2 Khi xuất bản website
 
 - Không dùng bảng quá rộng; mặc định không quá năm cột.
-- Sơ đồ Mermaid phải được kết xuất thành hình sắc nét nếu Notion không hiển thị trực tiếp.
+- Sơ đồ Mermaid phải được kiểm tra sau khi MkDocs kết xuất.
 - Code dài được tách thành tệp hoặc khối riêng; trong luồng chính chỉ giữ phần đang giải thích.
 - Hình phải được kiểm tra ở kích thước hiển thị thật, không chỉ nhìn tệp gốc.
 - Chú thích hình nằm ngay dưới hình và không bị tách khỏi đoạn đọc hình.
 - Callout chỉ dùng cho cảnh báo, quy ước hoặc kết luận cần ghi nhớ; không dùng cho mọi đoạn.
+
+### 13.3 Khi dùng Notion để học
+
+- Không sao chép toàn bộ chương thành một bản nội dung thứ hai.
+- Mỗi mục theo dõi chỉ giữ liên kết tới chương đã xuất bản, trạng thái học, câu hỏi, bản tóm tắt bằng trí nhớ và lịch ôn tập.
+- Ghi chú Notion không tự động ghi đè nội dung Git. Một sửa đổi cho sách phải bắt đầu từ branch và pull request.
 
 ## 14. Quy trình biên soạn một phần lớn
 
@@ -622,8 +629,9 @@ Người viết phải tự tìm cách làm nội dung sai bằng các câu hỏ
 3. Kiểm tra hình ở kích thước thật.
 4. Chạy lại code theo hướng dẫn từ môi trường sạch ở mức khả thi.
 5. Đối chiếu cổng hoàn thành.
-6. Đưa lên Notion với đúng thứ tự văn bản - hình - chú thích - đọc hình.
-7. Dừng để người dùng duyệt sau mỗi phần lớn trước khi viết phần kế tiếp, trừ khi người dùng yêu cầu viết liên tục.
+6. Build MkDocs ở chế độ `--strict`, kiểm tra bản đọc ở kích thước hiển thị thật và merge qua pull request.
+7. Cập nhật liên kết hoặc trạng thái tương ứng trong Notion mà không sao chép lại nội dung chương.
+8. Dừng để người dùng duyệt sau mỗi phần lớn trước khi viết phần kế tiếp, trừ khi người dùng yêu cầu viết liên tục.
 
 ## 15. Tiêu chí đạt/không đạt
 
@@ -785,7 +793,7 @@ $$
 - [ ] Kết luận không vượt quá bằng chứng.
 - [ ] Nguồn và phiên bản đã được kiểm tra.
 - [ ] Có tóm tắt, bài tập và cổng hoàn thành.
-- [ ] Bản Notion đã được xem lại ở kích thước hiển thị thật.
+- [ ] Bản website đã được build bằng `--strict` và xem lại ở kích thước hiển thị thật.
 
 ## 19. Cơ sở tham khảo phương pháp
 
@@ -797,4 +805,3 @@ Các phần của *Dive into Deep Learning* được dùng để rút ra phươn
 - Mục 13.3, trang in 577-580: bắt đầu từ bài toán thị giác cụ thể, giới thiệu biểu diễn, viết hàm chuyển đổi, kiểm tra hai chiều, trực quan hóa rồi kết thúc bằng tóm tắt và bài tập.
 
 Tài liệu này chỉ tiếp thu cấu trúc sư phạm. Nội dung Synthetic Data phải được kiểm chứng bằng nguồn chuyên ngành và thí nghiệm riêng.
-

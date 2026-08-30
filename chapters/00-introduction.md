@@ -421,7 +421,7 @@ Từ đây về sau:
 Đây là phần đặc biệt quan trọng đối với bộ xương người.
 ## 9.1. Một ví dụ cơ thể
 Xét cấu trúc đơn giản:
-```plain text
+```text
 Body
 └── UpperArm
     └── Forearm
@@ -462,7 +462,7 @@ Phần này chỉ giới thiệu đủ để chuẩn bị cho phần camera sau 
 Một bảng số được sắp thành hàng và cột được gọi là **matrix**.
 Ta gọi là **ma trận**.
 Ví dụ:
-```plain text
+```text
 1 0 0
 0 1 0
 0 0 1
@@ -478,7 +478,7 @@ Ta hoàn toàn có thể viết riêng:
 Nhưng pipeline 3D thường phải làm nhiều phép biến đổi nối tiếp nhau.
 Dùng ma trận cho phép máy tính ghép nhiều bước thành một dạng thống nhất.
 Ý tưởng cần nhớ:
-```plain text
+```text
 điểm ban đầu
 → áp dụng phép biến đổi
 → điểm mới
@@ -625,7 +625,7 @@ Một cảnh có thể nhìn hoàn toàn bình thường trong cửa sổ Unity 
 Mục tiêu của bài này không phải viết code dài. Mục tiêu là chứng minh bạn thực sự hiểu cách mô tả vị trí.
 ## Bài 1 — World và local
 Tạo trong Unity:
-```plain text
+```text
 Parent
 └── Child
 ```
@@ -669,7 +669,7 @@ Không cần học cú pháp C# trong bài này. Chỉ cần trả lời:
 ## Bài 5 — Mini exporter
 Tạo một GameObject đại diện cho một khớp.
 Mỗi frame, ghi ra ít nhất:
-```plain text
+```text
 frame index
 world position
 local position
@@ -718,6 +718,6 @@ Khi đó câu hỏi chuyển thành:
 - Unity Manual — *Rotation and orientation in Unity*: xác nhận Unity dùng hệ tọa độ tay trái, với `+x` sang phải, `+y` lên trên và `+z` về phía trước.
 - Unity Manual — *Transform component*: xác nhận `Transform` lưu vị trí, hướng quay, kích thước và quan hệ cha-con; các giá trị của đối tượng con được đo tương đối so với cha.
 - Unity Scripting API — `Transform.localPosition`: xác nhận `localPosition` là vị trí so với cha và thay đổi kích thước của các đối tượng tổ tiên ảnh hưởng đến vị trí toàn cảnh được tính ra.
-[Kiến trúc toàn sách — 26 chương](https://app.notion.com/p/3cab15c2171581e097e3c2737f476679)
-[Chương 1 — Từ bài toán thị giác đến một mẫu dữ liệu có thể kiểm chứng](https://app.notion.com/p/3cab15c2171581548ef2df82d3de9f71)
-[Chương 2 — Cùng một điểm cơ thể trong nhiều hệ tọa độ](https://app.notion.com/p/3cbb15c21715815c9871d774ae088470)
+[Kiến trúc toàn sách — 26 chương](../roadmap.md)
+[Chương 1 — Từ bài toán thị giác đến một mẫu dữ liệu có thể kiểm chứng](01-verifiable-data-sample.md)
+[Chương 2 — Cùng một điểm cơ thể trong nhiều hệ tọa độ](02-coordinate-frames.md)

@@ -1,0 +1,87 @@
+site_name: Synthetic Data for Human-Centric Computer Vision
+site_description: Tài liệu từ nền tảng đến nghiên cứu về dữ liệu tổng hợp cho thị giác máy tính lấy con người làm trung tâm.
+site_url: https://leluongswe.github.io/Synthetic-Data-for-Human-Centric-Computer-Vision-Book/
+repo_url: https://github.com/LeLuongSWE/Synthetic-Data-for-Human-Centric-Computer-Vision-Book
+repo_name: LeLuongSWE/Synthetic-Data-for-Human-Centric-Computer-Vision-Book
+edit_uri: edit/main/
+
+# `scripts/prepare_docs.py` tạo thư mục này từ các nguồn chuẩn `chapters/`,
+# `assets/`, `code/README.md` và `index.md` trước mỗi lần build.
+docs_dir: .build/mkdocs-src
+site_dir: .build/site
+
+nav:
+  - Bắt đầu: index.md
+  - Lộ trình 26 chương: roadmap.md
+  - Phần giới thiệu: chapters/00-introduction.md
+  - Phần I — Nhìn thấy toàn bộ hệ thống:
+      - Chương 1 — Mẫu dữ liệu có thể kiểm chứng: chapters/01-verifiable-data-sample.md
+  - Phần II — Cơ thể trong không gian 3D:
+      - Chương 2 — Các hệ tọa độ: chapters/02-coordinate-frames.md
+  - Trạng thái mã thực hành: code/README.md
+
+theme:
+  name: material
+  language: vi
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Chuyển sang giao diện tối
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: light-blue
+      toggle:
+        icon: material/brightness-4
+        name: Chuyển sang giao diện sáng
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - assets/stylesheets/book.css
+
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Bản đọc được tạo tự động từ nhánh main trên GitHub.

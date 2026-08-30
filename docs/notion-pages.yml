@@ -1,8 +1,10 @@
 version: 1
 sync:
+  enabled: false
   direction: git-to-notion
   source_branch: main
   overwrite_from_notion: false
+  note: "Legacy page map only. Notion now stores learning progress and notes, not chapter copies."
 workspace:
   id: 448dab17-a589-491f-a683-ba8aaf617fd1
   name: "Đức Lương Lê's Notion"
@@ -19,4 +21,3 @@ pages:
   - source: chapters/02-coordinate-frames.md
     notion_page_id: 3cbb15c2-1715-815c-9871-d774ae088470
     notion_url: https://app.notion.com/p/3cbb15c21715815c9871d774ae088470
-
