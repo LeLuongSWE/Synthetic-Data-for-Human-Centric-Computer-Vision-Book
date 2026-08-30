@@ -84,24 +84,36 @@
       .join("\n");
   }
 
-  function prepareAnswerExport(tasks, link) {
+  function buildGradingDocument(tasks) {
     const title = cleanPageTitle();
     const completed = tasks.filter(({ input }) => input.checked).length;
     const now = new Date();
     const lines = [
+      "# Yêu cầu dành cho ChatGPT",
+      "",
+      "Hãy chấm từng câu trả lời bên dưới một cách độc lập.",
+      "",
+      "Với mỗi câu, hãy:",
+      "",
+      "1. kết luận **Đúng**, **Đúng một phần** hoặc **Chưa đúng**;",
+      "2. chỉ ra chính xác phần đã đúng;",
+      "3. chỉ ra phần sai, thiếu hoặc chưa đủ căn cứ;",
+      "4. giải thích ngắn gọn cách sửa và đưa một câu trả lời mẫu;",
+      "5. nói rõ nếu cần thêm dữ kiện hoặc cần kiểm chứng từ nguồn chính thức.",
+      "",
+      "> Không được coi trạng thái “đã đánh dấu hoàn thành” là bằng chứng rằng câu trả lời đúng. Có thể đọc trang nguồn để lấy ngữ cảnh của chương.",
+      "",
       `# Bài làm — ${title}`,
       "",
       `- Trang nguồn: ${cleanPageUrl()}`,
       `- Xuất lúc: ${now.toLocaleString("vi-VN")}`,
       `- Tiến độ: ${completed}/${tasks.length}`,
       "",
-      "> Đính kèm tệp này vào một chat mới và yêu cầu kiểm tra từng câu: đúng, đúng một phần hoặc chưa đúng; giải thích chỗ cần sửa.",
-      "",
     ];
 
-    tasks.forEach(({ input, taskText, textarea }, index) => {
+    tasks.forEach(({ input, number, taskText, textarea }) => {
       lines.push(
-        `## ${index + 1}. ${taskText}`,
+        `## Câu ${number}. ${taskText}`,
         "",
         `- Trạng thái: ${input.checked ? "Đã đánh dấu hoàn thành" : "Chưa đánh dấu hoàn thành"}`,
         "",
@@ -112,18 +124,25 @@
       );
     });
 
-    const blob = new Blob([`${lines.join("\n")}\n`], {
+    return `${lines.join("\n")}\n`;
+  }
+
+  function prepareAnswerExport(tasks, link) {
+    const title = cleanPageTitle();
+    const now = new Date();
+    const blob = new Blob([buildGradingDocument(tasks)], {
       type: "text/markdown;charset=utf-8",
     });
     const downloadUrl = URL.createObjectURL(blob);
     const date = now.toISOString().slice(0, 10);
+    const questionSuffix = tasks.length === 1 ? `-cau-${tasks[0].number}` : "";
 
     if (link.dataset.downloadUrl) {
       URL.revokeObjectURL(link.dataset.downloadUrl);
     }
 
     link.href = downloadUrl;
-    link.download = `bai-lam-${slugify(title) || "chuong"}-${date}.md`;
+    link.download = `bai-lam-${slugify(title) || "chuong"}${questionSuffix}-${date}.md`;
     link.dataset.downloadUrl = downloadUrl;
 
     window.setTimeout(() => {
@@ -133,6 +152,45 @@
         delete link.dataset.downloadUrl;
       }
     }, 60000);
+  }
+
+  async function copyText(value) {
+    if (
+      typeof navigator !== "undefined" &&
+      navigator.clipboard &&
+      typeof navigator.clipboard.writeText === "function"
+    ) {
+      try {
+        await navigator.clipboard.writeText(value);
+        return true;
+      } catch (_error) {
+        // Fall back to a temporary textarea for older or restricted browsers.
+      }
+    }
+
+    const helper = document.createElement("textarea");
+    helper.value = value;
+    helper.setAttribute("readonly", "");
+    helper.style.position = "fixed";
+    helper.style.opacity = "0";
+    document.body.appendChild(helper);
+    helper.select();
+
+    try {
+      return document.execCommand("copy");
+    } catch (_error) {
+      return false;
+    } finally {
+      helper.remove();
+    }
+  }
+
+  async function copyForGrading(tasks, status, successMessage) {
+    status.textContent = "Đang sao chép…";
+    const copied = await copyText(buildGradingDocument(tasks));
+    status.textContent = copied
+      ? successMessage
+      : "Không thể sao chép. Hãy dùng nút xuất tệp .md.";
   }
 
   function createAnswerEditor(task, index) {
@@ -158,6 +216,31 @@
       ? "Đã khôi phục câu trả lời trên thiết bị này."
       : "Tự động lưu trên thiết bị này.";
 
+    const actions = document.createElement("div");
+    actions.className = "task-answer__actions";
+
+    const copyButton = document.createElement("button");
+    copyButton.className = "task-progress__button task-answer__action--primary";
+    copyButton.type = "button";
+    copyButton.textContent = "Sao chép câu này để chấm";
+
+    const exportLink = document.createElement("a");
+    exportLink.className = "task-progress__button";
+    exportLink.href = "#";
+    exportLink.textContent = "Xuất câu này (.md)";
+
+    const actionStatus = document.createElement("span");
+    actionStatus.className = "task-answer__action-status";
+    actionStatus.setAttribute("aria-live", "polite");
+
+    copyButton.addEventListener("click", () =>
+      copyForGrading([task], actionStatus, "Đã sao chép câu hỏi, câu trả lời và yêu cầu chấm."),
+    );
+    exportLink.addEventListener("click", () => {
+      prepareAnswerExport([task], exportLink);
+      actionStatus.textContent = "Đã tạo tệp cho câu này.";
+    });
+
     let saveTimer;
     const save = () => {
       window.clearTimeout(saveTimer);
@@ -174,7 +257,8 @@
     });
     textarea.addEventListener("blur", save);
 
-    wrapper.append(label, textarea, saveStatus);
+    actions.append(copyButton, exportLink);
+    wrapper.append(label, textarea, saveStatus, actions, actionStatus);
     task.item.appendChild(wrapper);
     task.textarea = textarea;
   }
@@ -199,11 +283,23 @@
     const actions = document.createElement("div");
     actions.className = "task-progress__actions";
 
+    const copyAllButton = document.createElement("button");
+    copyAllButton.className = "task-progress__button task-progress__button--primary";
+    copyAllButton.type = "button";
+    copyAllButton.textContent = "Sao chép tất cả để chấm";
+
     const exportLink = document.createElement("a");
-    exportLink.className = "task-progress__button task-progress__button--primary";
+    exportLink.className = "task-progress__button";
     exportLink.href = "#";
-    exportLink.textContent = "Xuất bài làm (.md)";
-    exportLink.addEventListener("click", () => prepareAnswerExport(tasks, exportLink));
+    exportLink.textContent = "Xuất tất cả (.md)";
+    exportLink.addEventListener("click", () => {
+      prepareAnswerExport(tasks, exportLink);
+      hint.textContent = "Đã tạo tệp chứa toàn bộ câu hỏi và câu trả lời.";
+    });
+
+    copyAllButton.addEventListener("click", () =>
+      copyForGrading(tasks, hint, "Đã sao chép toàn bộ bài và yêu cầu chấm."),
+    );
 
     const resetButton = document.createElement("button");
     resetButton.className = "task-progress__button";
@@ -224,7 +320,7 @@
     });
 
     summary.append(status, hint);
-    actions.append(exportLink, resetButton);
+    actions.append(copyAllButton, exportLink, resetButton);
     panel.append(summary, actions);
     firstList.parentNode.insertBefore(panel, firstList);
 
@@ -263,6 +359,7 @@
         answerKey: storageKey(ANSWER_PREFIX, taskText, occurrence),
         input,
         item,
+        number: tasks.length + 1,
         progressKey,
         sourceChecked,
         taskText,
