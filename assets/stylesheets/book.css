@@ -14,3 +14,42 @@
 .md-typeset .task-list-item {
   margin-bottom: 0.35rem;
 }
+
+.md-typeset .task-list-item input[type="checkbox"]:not(:disabled),
+.md-typeset .task-list-item input[type="checkbox"]:not(:disabled) + .task-list-indicator {
+  cursor: pointer;
+}
+
+.task-progress {
+  align-items: center;
+  background: var(--md-code-bg-color);
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.65rem 0.8rem;
+}
+
+.task-progress__status {
+  font-weight: 600;
+}
+
+.task-progress__reset {
+  background: transparent;
+  border: 0;
+  color: var(--md-accent-fg-color);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.2rem 0;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+
+.task-progress__reset:focus-visible {
+  border-radius: 0.2rem;
+  outline: 0.12rem solid var(--md-accent-fg-color);
+  outline-offset: 0.15rem;
+}
