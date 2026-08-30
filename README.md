@@ -47,9 +47,11 @@ mkdocs serve
 
 Checklist trong từng chương có thể tích trực tiếp và có ô ghi câu trả lời hoặc
 bằng chứng. Tiến độ cùng câu trả lời được lưu trong trình duyệt hiện tại, không
-ghi ngược vào Git và không tự đồng bộ sang thiết bị khác. Nút **Xuất bài làm
-(.md)** tạo tệp có thể đính kèm vào một chat riêng để được kiểm tra; dùng Notion
-nếu cần theo dõi tiến độ tổng thể giữa nhiều thiết bị.
+ghi ngược vào Git và không tự đồng bộ sang thiết bị khác. Mỗi câu có thể được
+sao chép hoặc xuất riêng để gửi vào ChatGPT chấm; bảng tiến độ cũng cho phép sao
+chép hoặc xuất toàn bộ bài dưới dạng Markdown. Nội dung tạo sẵn yêu cầu đánh giá
+`Đúng / Đúng một phần / Chưa đúng` và chỉ rõ chỗ cần sửa. Dùng Notion nếu cần
+theo dõi tiến độ tổng thể giữa nhiều thiết bị.
 
 Mỗi pull request được kiểm tra bằng `mkdocs build --strict`. Mỗi thay đổi được merge vào `main` sẽ kích hoạt workflow xuất bản.
 

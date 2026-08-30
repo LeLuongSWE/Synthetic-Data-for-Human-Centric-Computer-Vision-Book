@@ -43,7 +43,8 @@
 }
 
 .task-progress__hint,
-.task-answer__save-status {
+.task-answer__save-status,
+.task-answer__action-status {
   color: var(--md-default-fg-color--light);
   font-size: 0.72rem;
 }
@@ -85,6 +86,20 @@
 .task-answer__label {
   font-size: 0.75rem;
   font-weight: 700;
+}
+
+.task-answer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+}
+
+.task-answer__action--primary {
+  font-weight: 700;
+}
+
+.task-answer__action-status:empty {
+  display: none;
 }
 
 .task-answer__field {
