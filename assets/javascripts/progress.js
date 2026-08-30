@@ -84,7 +84,7 @@
       .join("\n");
   }
 
-  function exportAnswers(tasks) {
+  function prepareAnswerExport(tasks, link) {
     const title = cleanPageTitle();
     const completed = tasks.filter(({ input }) => input.checked).length;
     const now = new Date();
@@ -116,15 +116,23 @@
       type: "text/markdown;charset=utf-8",
     });
     const downloadUrl = URL.createObjectURL(blob);
-    const link = document.createElement("a");
     const date = now.toISOString().slice(0, 10);
+
+    if (link.dataset.downloadUrl) {
+      URL.revokeObjectURL(link.dataset.downloadUrl);
+    }
 
     link.href = downloadUrl;
     link.download = `bai-lam-${slugify(title) || "chuong"}-${date}.md`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+    link.dataset.downloadUrl = downloadUrl;
+
+    window.setTimeout(() => {
+      if (link.dataset.downloadUrl === downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+        link.href = "#";
+        delete link.dataset.downloadUrl;
+      }
+    }, 60000);
   }
 
   function createAnswerEditor(task, index) {
@@ -191,11 +199,11 @@
     const actions = document.createElement("div");
     actions.className = "task-progress__actions";
 
-    const exportButton = document.createElement("button");
-    exportButton.className = "task-progress__button task-progress__button--primary";
-    exportButton.type = "button";
-    exportButton.textContent = "Xuất bài làm (.md)";
-    exportButton.addEventListener("click", () => exportAnswers(tasks));
+    const exportLink = document.createElement("a");
+    exportLink.className = "task-progress__button task-progress__button--primary";
+    exportLink.href = "#";
+    exportLink.textContent = "Xuất bài làm (.md)";
+    exportLink.addEventListener("click", () => prepareAnswerExport(tasks, exportLink));
 
     const resetButton = document.createElement("button");
     resetButton.className = "task-progress__button";
@@ -216,7 +224,7 @@
     });
 
     summary.append(status, hint);
-    actions.append(exportButton, resetButton);
+    actions.append(exportLink, resetButton);
     panel.append(summary, actions);
     firstList.parentNode.insertBefore(panel, firstList);
 
